@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/hiro-o918/go-bazel-examples
+gazelle(name = "gazelle")
+
+package(default_visibility = ["//visibility:public"])
+
+go_library(
+    name = "go-bazel-examples",
+    srcs = [
+        "handler.go",
+        "interfaces.go",
+    ],
+    importpath = "github.com/hiro-o918/go-bazel-examples",
+)
